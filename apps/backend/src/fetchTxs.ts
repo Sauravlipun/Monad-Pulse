@@ -27,7 +27,7 @@ export async function fetchTxsForAddress(web3: Web3, address: string): Promise<T
     }
     noTxBlocks = foundTx ? 0 : noTxBlocks + 1;
     currentBlock--;
-    await new Promise(resolve => setTimeout(resolve, 50)); // Throttle
+    await new Promise(resolve => setTimeout(resolve, 200)); // Throttle
   }
 
   return txs.sort((a, b) => b.timestamp - a.timestamp);
